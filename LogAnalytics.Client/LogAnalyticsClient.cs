@@ -28,6 +28,7 @@ namespace LogAnalytics.Client
 
         private string RequestBaseUrl { get; }
 
+
         private LogAnalyticsClient(HttpClient client, string workspaceId, string sharedKey, string endPointOverride = null)
         {
             if (string.IsNullOrEmpty(workspaceId))
@@ -153,7 +154,7 @@ namespace LogAnalytics.Client
             var entityAsJson = JsonConvert.SerializeObject(entities, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
             var authSignature = this.GetAuthSignature(entityAsJson, dateTimeNow);
 
-            using var request = new HttpRequestMessage(HttpMethod.Post, this.RequestBaseUrl);
+            var request = new HttpRequestMessage(HttpMethod.Post, this.RequestBaseUrl);
             request.Headers.Clear();
             request.Headers.Add("Authorization", authSignature);
             request.Headers.Add("Log-Type", logType);
