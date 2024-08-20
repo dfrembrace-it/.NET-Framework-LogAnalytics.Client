@@ -6,3 +6,4 @@ packages/
 .vs/
 node_modules
 TestResults
+*.sln
