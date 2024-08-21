@@ -1,18 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30128.36
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogAnalytics.Client", "LogAnalytics.Client\LogAnalytics.Client.csproj", "{40A6CA2A-6A59-4A45-8A58-155080BCCC0A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogAnalytics.Client", "LogAnalytics.Client\LogAnalytics.Client.csproj", "{13006068-6DAB-453A-AED9-BBF940C03986}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogAnalytics.Client.IntegrationTests", "LogAnalytics.Client.IntegrationTests\LogAnalytics.Client.IntegrationTests.csproj", "{CF2ED0C5-080B-460C-A578-BAADE19B22E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogAnalytics.Client.IntegrationTests", "LogAnalytics.Client.IntegrationTests\LogAnalytics.Client.IntegrationTests.csproj", "{C8AD4E17-F070-4568-B18F-6A3E3B1A9A90}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogAnalytics.Client.UnitTests", "LogAnalytics.Client.UnitTests\LogAnalytics.Client.UnitTests.csproj", "{B0CE6938-F21F-4C7A-AC62-6D03315169D0}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3E33E51B-3D53-4F4A-ADFB-FF0695187630}"
-	ProjectSection(SolutionItems) = preProject
-		.editorconfig = .editorconfig
-	EndProjectSection
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogAnalytics.Client.UnitTests", "LogAnalytics.Client.UnitTests\LogAnalytics.Client.UnitTests.csproj", "{52574F64-0443-4031-8CC4-FDACD91C6547}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,23 +15,23 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{40A6CA2A-6A59-4A45-8A58-155080BCCC0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{40A6CA2A-6A59-4A45-8A58-155080BCCC0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{40A6CA2A-6A59-4A45-8A58-155080BCCC0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{40A6CA2A-6A59-4A45-8A58-155080BCCC0A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CF2ED0C5-080B-460C-A578-BAADE19B22E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CF2ED0C5-080B-460C-A578-BAADE19B22E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CF2ED0C5-080B-460C-A578-BAADE19B22E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CF2ED0C5-080B-460C-A578-BAADE19B22E3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B0CE6938-F21F-4C7A-AC62-6D03315169D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B0CE6938-F21F-4C7A-AC62-6D03315169D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B0CE6938-F21F-4C7A-AC62-6D03315169D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B0CE6938-F21F-4C7A-AC62-6D03315169D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13006068-6DAB-453A-AED9-BBF940C03986}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13006068-6DAB-453A-AED9-BBF940C03986}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13006068-6DAB-453A-AED9-BBF940C03986}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13006068-6DAB-453A-AED9-BBF940C03986}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8AD4E17-F070-4568-B18F-6A3E3B1A9A90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8AD4E17-F070-4568-B18F-6A3E3B1A9A90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8AD4E17-F070-4568-B18F-6A3E3B1A9A90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8AD4E17-F070-4568-B18F-6A3E3B1A9A90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52574F64-0443-4031-8CC4-FDACD91C6547}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52574F64-0443-4031-8CC4-FDACD91C6547}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52574F64-0443-4031-8CC4-FDACD91C6547}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52574F64-0443-4031-8CC4-FDACD91C6547}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {B79B7CC5-D2B9-4586-BEE4-873317D77EDA}
+		SolutionGuid = {35732DF6-6CC4-4D57-9BAF-A3756BE57079}
 	EndGlobalSection
 EndGlobal
