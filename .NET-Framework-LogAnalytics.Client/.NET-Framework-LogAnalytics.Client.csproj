@@ -2,19 +2,19 @@
 
 	<PropertyGroup>
 		<TargetFramework>net48</TargetFramework>
-		<Authors>Zimmergren</Authors>
+		<Authors>Zimmergren,dfr-embraceit</Authors>
 		<Company>Zimmergren</Company>
-		<Product>LogAnalytics.Client</Product>
+		<Product>.NET-Framework-LogAnalytics.Client</Product>
 		<Description>
-			A .NET Core client for Azure Log Analytics.
-			The easiest way to send logs to Azure Log Analytics from your .NET Core applications.
+			A .NET Framework client for Azure Log Analytics.
+			The easiest way to send logs to Azure Log Analytics from your .NET Framework applications.
 		</Description>
-		<PackageProjectUrl>https://github.com/Zimmergren/LogAnalytics.Client</PackageProjectUrl>
-		<PackageId>LogAnalytics.Client</PackageId>
-		<Version>6.2.3</Version>
-		<PackageDescription>A .NET client for Azure Log Analytics. Compatible with .NET Core, .NET 5 and .NET 6</PackageDescription>
-		<RepositoryUrl>https://github.com/Zimmergren/LogAnalytics.Client</RepositoryUrl>
-		<AssemblyVersion>1.0.0.0</AssemblyVersion>
+		<PackageProjectUrl>https://github.com/dfrembrace-it/.NET-Framework-LogAnalytics.Client</PackageProjectUrl>
+		<PackageId>.NET-Framework-LogAnalytics.Client</PackageId>
+		<Version>6.2.4</Version>
+		<PackageDescription>A .NET client for Azure Log Analytics. Compatible with .NET Framework</PackageDescription>
+		<RepositoryUrl>https://github.com/dfrembrace-it/.NET-Framework-LogAnalytics.Client.git</RepositoryUrl>
+		<AssemblyVersion>1.0.0.1</AssemblyVersion>
 	</PropertyGroup>
 
 	<ItemGroup>
