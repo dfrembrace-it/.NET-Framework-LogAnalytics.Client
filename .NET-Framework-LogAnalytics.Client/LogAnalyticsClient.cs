@@ -1,7 +1,4 @@
-﻿using LogAnalytics.Client.Configuration;
-using Microsoft.Extensions.Options;
-using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -10,6 +7,9 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using LogAnalytics.Client.Configuration;
+using Microsoft.Extensions.Options;
+using Newtonsoft.Json;
 
 namespace LogAnalytics.Client
 {
@@ -28,6 +28,26 @@ namespace LogAnalytics.Client
 
         private string RequestBaseUrl { get; }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LogAnalyticsClient"/> class.
+        /// </summary>
+        /// <param name="client">The HttpClient.</param>
+        /// <param name="options">LogAnalyticsClient options.</param>
+        public LogAnalyticsClient(HttpClient client, IOptions<LogAnalyticsClientOptions> options)
+            : this(client, options.Value.WorkspaceId, options.Value.SharedKey, options.Value.EndPointOverride)
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LogAnalyticsClient"/> class.
+        /// </summary>
+        /// <param name="workspaceId">Azure Log Analytics Workspace ID.</param>
+        /// <param name="sharedKey">Azure Log Analytics Workspace Shared Key.</param>
+        /// <param name="endPointOverride">The Azure Cloud to use.</param>
+        public LogAnalyticsClient(string workspaceId, string sharedKey, string endPointOverride = null)
+            : this(new HttpClient(), workspaceId, sharedKey, endPointOverride)
+        {
+        }
 
         private LogAnalyticsClient(HttpClient client, string workspaceId, string sharedKey, string endPointOverride = null)
         {
@@ -55,34 +75,13 @@ namespace LogAnalytics.Client
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="LogAnalyticsClient"/> class.
-        /// </summary>
-        /// <param name="client">The HttpClient.</param>
-        /// <param name="options">LogAnalyticsClient options.</param>
-        public LogAnalyticsClient(HttpClient client, IOptions<LogAnalyticsClientOptions> options)
-            : this(client, options.Value.WorkspaceId, options.Value.SharedKey, options.Value.EndPointOverride)
-        {
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="LogAnalyticsClient"/> class.
-        /// </summary>
-        /// <param name="workspaceId">Azure Log Analytics Workspace ID</param>
-        /// <param name="sharedKey">Azure Log Analytics Workspace Shared Key</param>
-        /// <param name="endPointOverride">The Azure Cloud to use.</param>
-        public LogAnalyticsClient(string workspaceId, string sharedKey, string endPointOverride = null)
-            : this(new HttpClient(), workspaceId, sharedKey, endPointOverride)
-        {
-        }
-
-        /// <summary>
         /// Send an entity as a single log entry to Azure Log Analytics.
         /// </summary>
-        /// <typeparam name="T">Entity Type</typeparam>
-        /// <param name="entity">The object</param>
-        /// <param name="logType">The log type</param>
-        /// <param name="resourceId">The resource id</param>
-        /// <param name="timeGeneratedCustomFieldName">The name of the field that contains the Time Generated data</param>
+        /// <typeparam name="T">Entity Type.</typeparam>
+        /// <param name="entity">The object.</param>
+        /// <param name="logType">The log type.</param>
+        /// <param name="resourceId">The resource id.</param>
+        /// <param name="timeGeneratedCustomFieldName">The name of the field that contains the Time Generated data.</param>
         /// <returns>Does not return anything.</returns>
         public Task SendLogEntry<T>(T entity, string logType, string resourceId = null, string timeGeneratedCustomFieldName = null)
         {
@@ -114,11 +113,11 @@ namespace LogAnalytics.Client
         /// <summary>
         /// Send a collection of entities in a batch to Azure Log Analytics.
         /// </summary>
-        /// <typeparam name="T">The entity type</typeparam>
-        /// <param name="entities">The collection of objects</param>
-        /// <param name="logType">The log type</param>
-        /// <param name="resourceId">The resource id</param>
-        /// <param name="timeGeneratedCustomFieldName">The name of the field that contains the Time Generated data</param>
+        /// <typeparam name="T">The entity type.</typeparam>
+        /// <param name="entities">The collection of objects.</param>
+        /// <param name="logType">The log type.</param>
+        /// <param name="resourceId">The resource id.</param>
+        /// <param name="timeGeneratedCustomFieldName">The name of the field that contains the Time Generated data.</param>
         /// <returns>Does not return anything.</returns>
         public async Task SendLogEntries<T>(List<T> entities, string logType, string resourceId = null, string timeGeneratedCustomFieldName = null)
         {
@@ -148,7 +147,6 @@ namespace LogAnalytics.Client
             }
 
             // Room for improvement: Identify if there is a timeGeneratedCustomFieldName specified, and if so, ensure the value of the field conforms with the ISO 8601 datetime format.
-
             var dateTimeNow = DateTime.UtcNow.ToString("r", System.Globalization.CultureInfo.InvariantCulture);
 
             var entityAsJson = JsonConvert.SerializeObject(entities, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });

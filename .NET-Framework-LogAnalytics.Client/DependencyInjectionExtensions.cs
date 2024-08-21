@@ -1,7 +1,7 @@
-﻿using LogAnalytics.Client.Configuration;
+﻿using System;
+using LogAnalytics.Client.Configuration;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System;
 
 namespace LogAnalytics.Client
 {
