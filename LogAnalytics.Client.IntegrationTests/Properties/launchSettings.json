@@ -1,7 +1,0 @@
-{
-  "profiles": {
-    "LogAnalytics.Client.IntegrationTests": {
-      "commandName": "Project"
-    }
-  }
-}
